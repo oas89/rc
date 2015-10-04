@@ -1,0 +1,6 @@
+.idea/
+.venv/
+.python-version
+ghostdriver.log
+.*nginx.conf
+.\.iml

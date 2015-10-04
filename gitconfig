@@ -1,0 +1,17 @@
+[user]
+  name = Aleksandr Osipov
+  email = osipov.as89@gmail.com
+
+[color]
+  ui = true
+
+[alias]
+  ci = commit
+  di = diff
+  st = status
+  graph = log --oneline --graph --date=short --color --decorate
+
+[push]
+	default = simple
+[core]
+	excludesfile = /home/osipov/.gitignore
