@@ -1,0 +1,33 @@
+extra/alsa-utils 1.1.3-2
+archlinuxfr/dropbox 17.4.33-1
+archlinuxfr/yaourt 1.8.1-1
+extra/file-roller 3.22.2-1 (gnome-extra)
+extra/evince 3.22.1-1 (gnome)
+extra/htop 2.0.2-1
+core/iputils 20161105.1f2bb12-1 (base)
+core/openvpn 2.4.0-2
+core/openssh 7.4p1-2
+core/grub 1:2.02.rc1-1
+extra/mercurial 4.1-1
+extra/mesa-demos 8.3.0-2
+core/netctl 1.12-2 (base)
+extra/nginx 1.10.3-2
+extra/nvidia 378.13-2
+extra/pavucontrol 3.0-4
+extra/vim 8.0.0329-1
+extra/vlc 2.2.4-7
+extra/wget 1.19.1-2
+community/python-virtualenvwrapper 4.7.2-2
+community/deadbeef 0.7.2-1
+community/evtest 1.33-2
+community/rofi 1.3.1-1
+community/rxvt-unicode 9.22-2
+community/scrot 0.8.13-1
+community/terminus-font 4.40-3
+community/tmux 2.3-1
+community/viewnior 1.6-2
+extra/xf86-input-synaptics 1.9.0-1 (xorg-drivers)
+extra/xorg-xdpyinfo 1.3.2-1 (xorg-apps xorg)
+extra/xorg-xfontsel 1.0.5-1
+extra/xorg-xinit 1.3.4-4
+extra/zsh 5.3.1-1
