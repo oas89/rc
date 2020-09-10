@@ -7,11 +7,15 @@
 
 [alias]
   ci = commit
+  co = checkout
   di = diff
   st = status
-  graph = log --oneline --graph --date=short --color --decorate
+  in = pull --dry-run
+  out = log --branches --not --remotes
+  graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad %C(green)%d%Creset %s [%an]\" --date=short --glob=heads/
 
 [push]
-	default = simple
+  default = simple
+
 [core]
-	excludesfile = /home/osipov/.gitignore
+  excludesfile = ~/.gitignore

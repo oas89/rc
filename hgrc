@@ -10,9 +10,6 @@ mq =
 rebase =
 pager = 
 
-[mq]
-secret = True
-
 [alias]
 slog = log --template='\033[0;33m{rev}:{node|short}\033[32;40m({date|age} by \033[35;40m{author|person}\033[32;40m)\033[0;33m{bookmarks} {branches} {tags}\033[0m\n ↳  \033[0m{desc|firstline|strip}\n'
 glog = slog -G
@@ -22,4 +19,3 @@ sheads = heads --template='\033[0;33m{rev}:{node|short} \033[32;40m({date|age} b
 [pager]
 attend = diff, slog, log, graph, qdiff
 pager = LESS='FRX' less
-

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+FILES="ackrc gitconfig hgrc tmux.conf zshrc"
+
+for FILE in $FILES; do
+  if [ -e "$HOME/.$FILE" ]; then
+    echo "linking $FILE"
+    ln -s "$PWD/$FILE" "$HOME/.$FILE"
+  fi
+done
