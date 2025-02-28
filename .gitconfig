@@ -1,0 +1,56 @@
+[user]
+  name = Aleksandr Osipov
+  email = osipov.as89@gmail.com
+
+[core]
+  pager = delta
+  excludesfile = ~/.gitignore
+
+[branch]
+  sort = -committerdate
+
+[tag]
+  sort = version:refname
+
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+
+[color]
+  ui = true
+
+[column]
+  ui = auto
+
+[alias]
+  lease = push --force-with-lease
+  ci = commit
+  co = checkout
+  di = diff
+  st = status
+  in = pull --dry-run
+  out = log --branches --not --remotes
+  graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad %C(green)%d%Creset %s [%an]\" --date=short --glob=heads/
+
+[push]
+  default = simple
+  autoSetupRemote = true
+  followTags = true
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  syntax-theme = Visual Studio Dark+
+  navigate = true
+  file-style = white
+  file-decoration-style = grey ol
+  hunk-header-decoration-style = dim grey box
+  line-numbers = true
+  line-numbers-left-format = "{nm}┊"
+  line-numbers-right-format = "{np}│"
+  line-numbers-left-style = dim grey
+  line-numbers-right-style = dim grey
+  keep-plus-minus-markers = true
