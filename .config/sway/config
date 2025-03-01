@@ -6,6 +6,8 @@ set $editor code
 set $browser google-chrome
 set $terminal gnome-terminal
 
+output * bg $HOME/.config/sway/background.jpg fill
+
 font pango:Liberation Mono 12px
 
 # Drag floating window with $mod and left mouse button, resize with right mouse button
