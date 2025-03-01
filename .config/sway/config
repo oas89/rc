@@ -1,0 +1,80 @@
+set $mod Mod4
+set $lock
+set $menu
+set $print
+set $editor code
+set $browser google-chrome
+set $terminal gnome-terminal
+
+font pango:Liberation Mono 12px
+
+# Drag floating window with $mod and left mouse button, resize with right mouse button
+floating_modifier $mod normal
+
+# Applications
+bindsym --to-code $mod+Shift+l exec $lock
+bindsym --to-code $mod+Shift+m exec $menu
+bindsym --to-code $mod+Shift+p exec $print
+bindsym --to-code $mod+Shift+e exec $editor
+bindsym --to-code $mod+Shift+b exec $browser
+bindsym --to-code $mod+Shift+t exec $terminal
+
+# Reload config
+bindsym --to-code $mod+r reload
+
+# Logout of wayland session
+bindsym --to-code $mod+l
+
+# Layout management and navigation
+bindsym --to-code $mod+q kill
+bindsym --to-code $mod+f fullscreen Toggle
+bindsym --to-code $mod+o floating toggle
+
+bindsym --to-code $mod+s layout stacking
+bindsym --to-code $mod+w layout tabbed
+bindsym --to-code $mod+e layout toggle split
+bindsym --to-code $mod+h splith
+bindsym --to-code $mod+v splitv
+
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [window_type="dialog"] floating enable
+
+bar {
+    swaybar_command waybar
+}
+
+# White      #d4e0ee / text #3E4F56
+# Pink light #ffdcdc / text #3E4F56
+# Pink dark  #ffa7a6 / 
