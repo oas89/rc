@@ -6,6 +6,11 @@ set $editor code
 set $browser google-chrome
 set $terminal gnome-terminal
 
+input * {
+    xkb_layout us,ru
+    xkb_options grp:caps_toggle
+}
+
 output * bg $HOME/.config/sway/background.jpg fill
 
 font pango:Liberation Mono 12px
