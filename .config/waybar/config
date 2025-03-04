@@ -1,0 +1,76 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin": "20 20 0 20",
+  "modules-left": [
+    "sway/workspaces"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "sway/language",
+    "disk",
+    "memory",
+    "network",
+    "pulseaudio",
+    "tray",
+    "clock"
+  ],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "sway/language": {
+    "format": "{}",
+    "format-en": "EN",
+    "format-ru": "РУ",
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "reverse-scrolling": 1,
+    "format": "{icon}",
+    "tooltip-format": "{volume}%",
+    "format-muted": " ",
+    "format-icons": {
+      "default": [
+        " ",
+        " ",
+        " "
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "disk": {
+    "format": "󰋊 {percentage_used}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": " {percentage}%",
+    "tooltip": false
+  },
+  "network": {
+    "format-wifi": "{icon}",
+    "format-ethernet": "  ",
+    "format-disconnected": "󰌙",
+    "format-icons": [
+      "󰤯 ",
+      "󰤟 ",
+      "󰤢 ",
+      "󰤢 ",
+      "󰤨 "
+    ]
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 2
+  },
+  "clock": {
+    "timezone": "Europe/Moscow",
+    "format": "{:%a %d %b %H:%M}",
+    "tooltip": false
+  }
+}
