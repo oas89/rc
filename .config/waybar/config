@@ -8,6 +8,7 @@
   "modules-center": [],
   "modules-right": [
     "sway/language",
+    "temperature",
     "disk",
     "memory",
     "network",
@@ -25,44 +26,39 @@
     }
   },
   "sway/language": {
-    "format": "{}",
-    "format-en": "EN",
-    "format-ru": "РУ",
+    "format": " {}",
     "tooltip": false
   },
   "pulseaudio": {
     "reverse-scrolling": 1,
-    "format": "{icon}",
-    "tooltip-format": "{volume}%",
+    "format": "  {volume}%",
     "format-muted": " ",
     "format-icons": {
       "default": [
         " ",
         " ",
         " "
-      ]
+      ],
+    "tooltip": false
     },
     "on-click": "pavucontrol"
   },
   "disk": {
-    "format": "󰋊 {percentage_used}%",
+    "format": " {percentage_used} ",
     "tooltip": false
   },
   "memory": {
-    "format": " {percentage}%",
+    "format": "  {percentage}%",
     "tooltip": false
   },
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "format": " {temperatureC}°C"
+  },
   "network": {
-    "format-wifi": "{icon}",
-    "format-ethernet": "  ",
-    "format-disconnected": "󰌙",
-    "format-icons": [
-      "󰤯 ",
-      "󰤟 ",
-      "󰤢 ",
-      "󰤢 ",
-      "󰤨 "
-    ]
+    "format-wifi": " {essid}",
+    "format-ethernet": "",
+    "format-disconnected": ""
   },
   "tray": {
     "icon-size": 16,
