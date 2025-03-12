@@ -5,6 +5,8 @@ set $terminal foot
 set $screenshot slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
 set $background $HOME/.config/sway/background.jpg
 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 font pango:Liberation Mono 12px
 
 input * {
