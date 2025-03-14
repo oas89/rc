@@ -4,8 +4,10 @@
   "margin": "0",
   "modules-left": [
     "sway/workspaces",
+    "mpris"
   ],
-  "modules-center": [],
+  "modules-center": [
+  ],
   "modules-right": [
     "temperature",
     "custom/separator",
@@ -36,6 +38,17 @@
     "tooltip": false,
     "min-length": 5,
     "max-length": 5
+  },
+  "mpris": {
+    "format": "{status_icon}  {title}",
+    "format-paused": "{status_icon}  {title}",
+    "title-len": 80,
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    },
+    "tooltip": false
   },
   "pulseaudio": {
     "reverse-scrolling": 1,
