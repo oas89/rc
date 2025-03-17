@@ -27,6 +27,8 @@ window#waybar {
   background-color: @background;
 }
 
+#custom-vpn,
+#custom-weather,
 #language,
 #temperature,
 #disk,

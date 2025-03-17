@@ -1,9 +1,8 @@
 set $mod Mod4
 set $menu wofi --show run
-set $browser firefox
+set $browser google-chrome
 set $terminal foot
 set $screenshot slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
-set $background $HOME/.config/sway/background.jpg
 
 exec nm-applet --indicator
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
@@ -22,7 +21,7 @@ input * {
     xkb_options grp:caps_toggle
 }
 
-output * bg $background fill
+output * bg #44475a solid_color
 
 # Drag windows by holding down $mod+LBM, resize by holding down $mod+RMB
 floating_modifier $mod normal
@@ -79,6 +78,9 @@ bindsym --to-code $mod+f fullscreen
 bindsym --to-code $mod+space focus mode_toggle
 bindsym --to-code $mod+Shift+space floating toggle
 bindsym --to-code $mod+Shift+q kill
+
+bindsym --to-code $mod+i move container to scratchpad
+bindsym --to-code $mod+o scratchpad show
 
 # Enable floating mode for well known window types
 for_window [window_role="pop-up"] floating enable

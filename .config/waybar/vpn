@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+
+import sys
+import json
+import dbus
+import dbus.mainloop.glib
+from gi.repository import GLib
+
+dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
+
+bus = dbus.SystemBus()
+
+vpn_states = {
+    0: "Unknown",
+    1: "Preparing",
+    2: "Need Auth",
+    3: "Connecting",
+    4: "Getting IP",
+    5: "Activated",
+    6: "Failed",
+    7: "Disconnected"
+}
+
+def vpn_state_changed_handler(state, reason, path):
+    try:
+        proxy = bus.get_object('org.freedesktop.NetworkManager', path)
+        props_iface = dbus.Interface(proxy, 'org.freedesktop.DBus.Properties')
+        connection_path = props_iface.Get('org.freedesktop.NetworkManager.Connection.Active', 'Connection')
+        conn_proxy = bus.get_object('org.freedesktop.NetworkManager', connection_path)
+        conn_iface = dbus.Interface(conn_proxy, 'org.freedesktop.NetworkManager.Settings.Connection')
+        settings = conn_iface.GetSettings()
+        vpn_name = settings['connection']['id']
+        print(json.dumps({"text": f" {vpn_name}"}))
+        sys.stdout.flush()
+    except Exception as e:
+        print(json.dumps({"text": ""}))
+        sys.stdout.flush()
+
+bus.add_signal_receiver(
+    vpn_state_changed_handler,
+    signal_name="VpnStateChanged",
+    dbus_interface="org.freedesktop.NetworkManager.VPN.Connection",
+    path_keyword="path"
+)
+
+print(json.dumps({"text": ""}))
+sys.stdout.flush()
+GLib.MainLoop().run()
