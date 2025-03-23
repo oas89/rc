@@ -2,47 +2,39 @@
   "layer": "top",
   "position": "top",
   "margin": "0",
-  "modules-left": [
-    "sway/workspaces",
-    "mpris"
-  ],
-  "modules-center": [
-  ],
-  "modules-right": [
-    "custom/vpn",
-    "custom/separator",
-    "custom/weather",
-    "custom/separator",
-    "temperature",
-    "custom/separator",
-    "disk",
-    "custom/separator",
-    "memory",
-    "custom/separator",
-    "pulseaudio",
-    "custom/separator",
-    "network",
-    "custom/separator",
-    "sway/language",
-    "custom/separator",
-    "clock",
-    "tray"
-  ],
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": []
-    },
+  "modules-left": ["sway/workspaces", "mpris"],
+  "modules-center": [],
+  "modules-right": ["group/audio", "group/hardware", "group/network", "clock", "tray"],
+
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio"]
   },
+
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": ["temperature#cpu", "temperature#gpu", "disk", "memory"]
+  },
+
+  "group/network": {
+    "orientation": "horizontal",
+    "modules": ["network"]
+  },
+
+  "sway/workspaces": {
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": ""
+    }
+  },
+
   "sway/language": {
     "format": " <span variant='smallcaps'>{}</span>",
-    "tooltip": false,
-    "min-length": 5,
-    "max-length": 5
+    "tooltip": false
   },
+
   "mpris": {
     "format": "{status_icon}  {title}",
     "format-paused": "{status_icon}  {title}",
@@ -54,6 +46,7 @@
     },
     "tooltip": false
   },
+
   "pulseaudio": {
     "reverse-scrolling": 1,
     "format": " {volume}%",
@@ -68,41 +61,44 @@
     },
     "on-click": "pavucontrol"
   },
+
   "disk": {
     "format": " {percentage_used}%",
     "tooltip": false
   },
+
   "memory": {
     "format": " {percentage}%",
     "tooltip": false
   },
-  "temperature": {
-    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
-    "format": " {temperatureC}°"
+
+  "temperature#cpu": {
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp3_input",
+    "format": "CPU: {temperatureC}°"
   },
+
+  "temperature#gpu": {
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp2_input",
+    "format": "GPU: {temperatureC}°"
+  },
+
   "network": {
-    "format-wifi": " {signalStrength}%",
-    "format-ethernet": "",
+    "format-wifi": "  {essid} {signalStrength}%",
+    "format-ethernet": "",
     "format-disconnected": ""
   },
+
   "tray": {
-    "icon-size": 18,
+    "icon-size": 16,
     "spacing": 8
   },
+
   "clock": {
     "timezone": "Europe/Moscow",
     "format": "{:%a %d %b %H:%M}",
     "tooltip": false
   },
-  "custom/separator": {
-    "format": "|"
-  },
-  "custom/weather": {
-    "format": "{}",
-    "interval": 3600,
-    "exec": "$HOME/.config/waybar/weather 2> /dev/null",
-    "return-type": "json"
-  },
+
   "custom/vpn": {
     "format": "{}",
     "exec": "$HOME/.config/waybar/vpn 2> /dev/null",

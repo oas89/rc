@@ -33,7 +33,7 @@ def vpn_state_changed_handler(state, reason, path):
         print(json.dumps({"text": f" {vpn_name}"}))
         sys.stdout.flush()
     except Exception as e:
-        print(json.dumps({"text": ""}))
+        print(json.dumps({"text": ""}))
         sys.stdout.flush()
 
 bus.add_signal_receiver(
@@ -43,6 +43,6 @@ bus.add_signal_receiver(
     path_keyword="path"
 )
 
-print(json.dumps({"text": ""}))
+print(json.dumps({"text": ""}))
 sys.stdout.flush()
 GLib.MainLoop().run()

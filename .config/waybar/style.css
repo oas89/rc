@@ -11,9 +11,9 @@
 @define-color yellow #f1fa8c;
 
 * {
-  font-family: FontAwesome, "Ubuntu";
-  font-weight: 600;
-  font-size: 12px;
+  font-family: "Ubuntu";
+  font-weight: 400;
+  font-size: 14px;
   border: none;
   border-radius: 0;
   box-shadow: none;
@@ -22,62 +22,62 @@
   margin: 0;
 }
 
-window#waybar {
+#waybar {
   color: @foreground;
-  background-color: @background;
-}
-
-#custom-vpn,
-#custom-weather,
-#language,
-#temperature,
-#disk,
-#memory,
-#network,
-#pulseaudio,
-#tray,
-#clock
-{
-  color: @orange;
-  padding: 0 4px;
-}
-
-#workspaces {
-  margin-right: 16px;
-}
-
-#workspaces button {
-  color: @orange;
-  padding: 0 4px;
-  border-top: 2px solid transparent;
-}
-
-#workspaces button:hover {
-  border-top: 2px solid @foreground;
   background: @background;
 }
 
-#workspaces button.focused {
-  border-top: 2px solid @foreground;
+.modules-right > * {
+  color: @background;
+  background: @foreground;
+  padding: 0 8px;
 }
 
-#workspaces button.active {
-  border-top: 2px solid @foreground;
+.modules-right > * label {
+  padding: 0 4px;
+}
+
+.modules-right > *:nth-child(1) {
+  color: @background;
+  background: @green;
+}
+
+.modules-right > *:nth-child(2) {
+  color: @background;
+  background: @yellow;
+}
+
+.modules-right > *:nth-child(3) {
+  color: @background;
+  background: @cyan;
+}
+
+#workspaces button {
+  color: @background;
+  background: @foreground;
+  padding: 0 4px;
+}
+
+#workspaces button:hover {
+  color: @background;
+  background: @green;
+}
+
+#workspaces button.focused {
+  color: @background;
+  background: @green;
 }
 
 #workspaces button.urgent {
-  border-top: 2px solid @red;
-}
-
-#window {
-  color: @orange;
-  margin-left: 8px;
+  color: @background;
+  background: @red;
 }
 
 #mpris {
-
+  font-size: 12px;
+  margin-left: 32px;
 }
 
-#custom-separator {
-  color: @foreground;
+#tray {
+  padding: 0 16px 0 8px;
 }
