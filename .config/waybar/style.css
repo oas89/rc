@@ -53,8 +53,8 @@
 }
 
 #workspaces button {
-  color: @background;
-  background: @foreground;
+  color: @foreground;
+  background: @background;
   padding: 0 4px;
 }
 
@@ -78,6 +78,11 @@
   margin-left: 32px;
 }
 
+#clock {
+  padding: 0 12px;
+}
+
 #tray {
   padding: 0 16px 0 8px;
+  background: transparent;
 }

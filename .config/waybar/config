@@ -30,11 +30,6 @@
     }
   },
 
-  "sway/language": {
-    "format": " <span variant='smallcaps'>{}</span>",
-    "tooltip": false
-  },
-
   "mpris": {
     "format": "{status_icon}  {title}",
     "format-paused": "{status_icon}  {title}",
@@ -49,43 +44,46 @@
 
   "pulseaudio": {
     "reverse-scrolling": 1,
-    "format": " {volume}%",
+    "format": "{icon} {volume}%",
     "format-muted": " ",
     "format-icons": {
-      "default": [
-        " ",
-        " ",
-        " "
-      ],
-    "tooltip": false
+      "default": [" "]
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
+    "tooltip": false
   },
 
   "disk": {
-    "format": " {percentage_used}%",
+    "format": " {percentage_used}% <span variant='smallcaps'>ssd</span>",
     "tooltip": false
   },
 
   "memory": {
-    "format": " {percentage}%",
+    "format": "  {percentage}% <span variant='smallcaps'>mem</span>",
     "tooltip": false
   },
 
   "temperature#cpu": {
     "hwmon-path": "/sys/class/hwmon/hwmon2/temp3_input",
-    "format": "CPU: {temperatureC}°"
+    "format": "{icon} {temperatureC}° <span variant='smallcaps'>cpu</span>",
+    "format-icons": ["", "", "", "", ""],
+    "critical-threshold": 90,
+    "tooltip": false
   },
 
   "temperature#gpu": {
     "hwmon-path": "/sys/class/hwmon/hwmon1/temp2_input",
-    "format": "GPU: {temperatureC}°"
+    "format": "{icon} {temperatureC}° <span variant='smallcaps'>gpu</span>",
+    "format-icons": ["", "", "", "", ""],
+    "critical-threshold": 90,
+    "tooltip": false
   },
 
   "network": {
     "interface": "wlxe*",
-    "format-wifi": "  {essid} {signalStrength}%",
-    "format-disconnected": "",
+    "format": "{icon} {essid}",
+    "format-icons": [""],
+    "format-disconnected": "",
     "tooltip": false
   },
 
@@ -98,13 +96,13 @@
 
   "tray": {
     "icon-size": 16,
-    "spacing": 8
+    "spacing": 8,
+    "show-passive-items": true
   },
 
   "clock": {
     "timezone": "Europe/Moscow",
-    "format": "{:%a %d %b %H:%M}",
+    "format": " {:%a %d %b %H:%M}",
     "tooltip": false
   }
 }
-
