@@ -5,7 +5,7 @@ set $terminal foot
 set $print slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
 
 exec nm-applet --indicator
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+#exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 font pango:Victor Mono 12px
 default_border pixel 2
@@ -96,3 +96,4 @@ bar {
     swaybar_command waybar
 }
 
+include /etc/sway/config.d/*

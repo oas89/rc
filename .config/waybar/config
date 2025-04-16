@@ -3,23 +3,17 @@
   "position": "top",
   "margin": "0",
   "modules-left": ["sway/workspaces"],
-  "modules-center":  ["mpris"],
-  "modules-right": ["group/audio", "group/hardware", "group/network", "clock", "tray"],
-
-  "group/audio": {
-    "orientation": "horizontal",
-    "modules": ["pulseaudio"]
-  },
-
-  "group/hardware": {
-    "orientation": "horizontal",
-    "modules": ["temperature#cpu", "temperature#gpu", "disk", "memory"]
-  },
-
-  "group/network": {
-    "orientation": "horizontal",
-    "modules": ["network",  "network#vpn"]
-  },
+  "modules-center": ["mpris"],
+  "modules-right": [
+    "pulseaudio",
+    "disk",
+    "memory",
+    "network",
+    "temperature#cpu",
+    "temperature#gpu",
+    "clock",
+    "tray"
+  ],
 
   "sway/workspaces": {
     "format": "{name}: {icon}",
@@ -31,35 +25,35 @@
   },
 
   "mpris": {
-    "format": "{status_icon}  {title}",
-    "format-paused": "{status_icon}  {title}",
+    "format": "{status_icon} <span foreground='#f8f8f2'>{title}</span>",
     "title-len": 80,
     "status-icons": {
-      "playing": "",
-      "paused": "",
-      "stopped": ""
+      "playing": "\uf28b",
+      "paused": "\uf144",
+      "stopped": "\uf28d"
     },
     "tooltip": false
   },
 
   "pulseaudio": {
     "reverse-scrolling": 1,
-    "format": "{icon} {volume}%",
-    "format-muted": " ",
+    "format": "{icon} <span foreground='#f8f8f2'>{volume}%</span>",
+    "format-muted": "",
     "format-icons": {
-      "default": [" "]
+      "default": ["\uf028"]
     },
     "on-click": "pavucontrol",
     "tooltip": false
   },
 
   "disk": {
-    "format": " {percentage_used}% <span variant='smallcaps'>ssd</span>",
+    "format": "\uf0c7 <span foreground='#f8f8f2'>{specific_used:0.0f}/{specific_total:0.0f} GB</span>",
+    "unit": "GB",
     "tooltip": false
   },
 
   "memory": {
-    "format": "  {percentage}% <span variant='smallcaps'>mem</span>",
+    "format": "\uf2db <span foreground='#f8f8f2'>{used:0.0f}/{total:0.0f} GB</span>",
     "tooltip": false
   },
 
@@ -81,8 +75,8 @@
 
   "network": {
     "interface": "wlxe*",
-    "format": "{icon} {essid}",
-    "format-icons": [""],
+    "format": "{icon} <span foreground='f8f8f2'>{essid}</span>",
+    "format-icons": ["\uf1eb"],
     "format-disconnected": "",
     "tooltip": false
   },
@@ -101,8 +95,7 @@
   },
 
   "clock": {
-    "timezone": "Europe/Moscow",
-    "format": " {:%a %d %b %H:%M}",
+    "format": " <span foreground='#f8f8f2'>{:%H:%M}</span>",
     "tooltip": false
   }
 }
