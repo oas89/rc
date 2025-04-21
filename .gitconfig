@@ -35,6 +35,9 @@
   out = log --branches --not --remotes
   graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad %C(green)%d%Creset %s [%an]\" --date=short --glob=heads/
 
+[pull]
+  ff = only
+
 [push]
   default = simple
   autoSetupRemote = true
