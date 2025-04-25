@@ -7,10 +7,10 @@
   "modules-right": [
     "pulseaudio",
     "disk",
-    "memory",
-    "network",
     "temperature#cpu",
-    "temperature#gpu",
+    "network",
+    "backlight",
+    "battery",
     "clock",
     "tray"
   ],
@@ -25,19 +25,19 @@
   },
 
   "mpris": {
-    "format": "{status_icon} <span foreground='#f8f8f2'>{title}</span>",
+    "format": "{status_icon} {title}",
     "title-len": 80,
     "status-icons": {
-      "playing": "\uf28b",
-      "paused": "\uf144",
-      "stopped": "\uf28d"
+      "playing": "",
+      "paused": "",
+      "stopped": ""
     },
     "tooltip": false
   },
 
   "pulseaudio": {
     "reverse-scrolling": 1,
-    "format": "{icon} <span foreground='#f8f8f2'>{volume}%</span>",
+    "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
       "default": ["\uf028"]
@@ -47,44 +47,48 @@
   },
 
   "disk": {
-    "format": "\uf0c7 <span foreground='#f8f8f2'>{specific_used:0.0f}/{specific_total:0.0f} GB</span>",
+    "format": " {specific_used:0.0f}/{specific_total:0.0f}GB",
     "unit": "GB",
     "tooltip": false
   },
 
   "memory": {
-    "format": "\uf2db <span foreground='#f8f8f2'>{used:0.0f}/{total:0.0f} GB</span>",
+    "format": " {used:0.0f}/{total:0.0f}</span>",
     "tooltip": false
   },
 
-  "temperature#cpu": {
+  "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon2/temp3_input",
-    "format": "{icon} {temperatureC}° <span variant='smallcaps'>cpu</span>",
-    "format-icons": ["", "", "", "", ""],
-    "critical-threshold": 90,
-    "tooltip": false
-  },
-
-  "temperature#gpu": {
-    "hwmon-path": "/sys/class/hwmon/hwmon1/temp2_input",
-    "format": "{icon} {temperatureC}° <span variant='smallcaps'>gpu</span>",
+    "format": "{icon} {temperatureC}°C",
     "format-icons": ["", "", "", "", ""],
     "critical-threshold": 90,
     "tooltip": false
   },
 
   "network": {
-    "interface": "wlxe*",
-    "format": "{icon} <span foreground='f8f8f2'>{essid}</span>",
-    "format-icons": ["\uf1eb"],
-    "format-disconnected": "",
+    "interface": "wl*",
+    "format": "{icon} {essid}",
+    "format-icons": [""],
+    "format-disconnected": "Disconnected",
     "tooltip": false
   },
 
-  "network#vpn": {
-    "interface": "tun0",
-    "format": " Work",
-    "format-disconnected": "",
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [""],
+    "tooltip": false
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": false
+  },
+
+  "clock": {
+    "format": " {:%H:%M}",
     "tooltip": false
   },
 
@@ -92,10 +96,6 @@
     "icon-size": 16,
     "spacing": 8,
     "show-passive-items": true
-  },
-
-  "clock": {
-    "format": " <span foreground='#f8f8f2'>{:%H:%M}</span>",
-    "tooltip": false
   }
 }
+
