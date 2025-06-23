@@ -1,10 +1,9 @@
 @define-color background #1f252b;
 @define-color foreground #f0fbf8;
-@define-color red        rgb(177,102,108);
-@define-color green      rgb(169,189,145);
-@define-color yellow     rgb(229,204,147);
-@define-color blue       rgb(137,160,190);
-@define-color magenta    rgb(173,144,171);
+@define-color separator  #999999;
+@define-color red        #af4b57;
+@define-color green      #93b279;
+@define-color yellow     #e5c178;
 
 * {
   font-family: "Victor Mono";
@@ -24,7 +23,15 @@
 }
 
 .modules-right > * > label {
-  padding-left: 16px;
+  color: @yellow;
+  padding: 0 12px;
+}
+
+.modules-right > *:not(:first-child) > label {
+  background-image: linear-gradient(transparent, @separator 5%, @separator 95%, transparent);
+  background-size: 1px 50%;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
 }
 
 #workspaces button {
@@ -35,12 +42,12 @@
 
 #workspaces button:hover {
   color: @background;
-  background: @green;
+  background: @yellow;
 }
 
 #workspaces button.focused {
   color: @background;
-  background: @green;
+  background: @yellow;
 }
 
 #workspaces button.urgent {
@@ -48,11 +55,6 @@
   background: @red;
 }
 
-#clock {
-  padding: 0 12px;
-}
-
 #tray {
-  padding: 0 16px 0 8px;
-  background: transparent;
+  padding-right: 8px;
 }

@@ -3,7 +3,6 @@
   email = osipov.as89@gmail.com
 
 [core]
-  pager = delta
   excludesfile = ~/.gitignore
   editor = vim
 

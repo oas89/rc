@@ -1,2 +1,5 @@
 .vscode
+.direnv
+.envrc
 .DS_Store
+shell.nix

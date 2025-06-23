@@ -2,15 +2,15 @@
   "layer": "top",
   "position": "top",
   "margin": "0",
-  "modules-left": ["sway/workspaces"],
-  "modules-center": ["mpris"],
+  "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-right": [
     "pulseaudio",
-    "disk",
-    "temperature#cpu",
-    "network",
     "backlight",
     "battery",
+    "temperature",
+    "disk",
+    "memory",
+    "network",
     "clock",
     "tray"
   ],
@@ -20,24 +20,15 @@
     "format-icons": {
       "1": "",
       "2": "",
-      "3": ""
+      "3": "",
+      "4": "",
+      "5": "",
     }
-  },
-
-  "mpris": {
-    "format": "{status_icon} {title}",
-    "title-len": 80,
-    "status-icons": {
-      "playing": "",
-      "paused": "",
-      "stopped": ""
-    },
-    "tooltip": false
   },
 
   "pulseaudio": {
     "reverse-scrolling": 1,
-    "format": "{icon} {volume}%",
+    "format": "{icon} <span foreground='white'>{volume}%</span>",
     "format-muted": "",
     "format-icons": {
       "default": ["\uf028"]
@@ -47,19 +38,20 @@
   },
 
   "disk": {
-    "format": " {specific_used:0.0f}/{specific_total:0.0f}GB",
+    "format": " <span foreground='white'>{specific_used:0.0f}/{specific_total:0.0f}GB</span>",
     "unit": "GB",
     "tooltip": false
   },
 
   "memory": {
-    "format": " {used:0.0f}/{total:0.0f}</span>",
+    "format": "{icon} <span foreground='white'>{used:0.0f}/{total:0.0f}GB</span>",
+    "format-icons": [""],
     "tooltip": false
   },
 
   "temperature": {
-    "hwmon-path": "/sys/class/hwmon/hwmon2/temp3_input",
-    "format": "{icon} {temperatureC}°C",
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "format": "{icon} <span foreground='white'>{temperatureC}°C</span>",
     "format-icons": ["", "", "", "", ""],
     "critical-threshold": 90,
     "tooltip": false
@@ -67,14 +59,14 @@
 
   "network": {
     "interface": "wl*",
-    "format": "{icon} {essid}",
+    "format": "{icon} <span foreground='white'>{essid}</span>",
     "format-icons": [""],
     "format-disconnected": "Disconnected",
     "tooltip": false
   },
 
   "backlight": {
-    "format": "{icon} {percent}%",
+    "format": "{icon} <span foreground='white'>{percent}%</span>",
     "format-icons": [""],
     "tooltip": false
   },
@@ -88,7 +80,7 @@
   },
 
   "clock": {
-    "format": " {:%H:%M}",
+    "format": "<span foreground='white'>{:%H:%M}</span>",
     "tooltip": false
   },
 
